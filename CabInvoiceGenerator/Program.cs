@@ -19,7 +19,9 @@
 
             InvoiceSummary totalFare = invoiceGenerator.CalculateFare(rides);
 
-            Console.WriteLine("\nTotal Fare Of Journey for multiple rides : " + totalFare);
+            Console.WriteLine("\nTotal Numbers of Journey for multiple rides : " + totalFare.numberOfRides);
+            Console.WriteLine("\nTotal Fare Of Journey for multiple rides : " + totalFare.totalFare);
+            Console.WriteLine("\nTotal Averge Fare Of Journey for multiple rides : " + totalFare.averageFare);
         }
     }
 }
