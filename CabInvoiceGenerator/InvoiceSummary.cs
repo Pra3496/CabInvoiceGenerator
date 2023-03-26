@@ -31,7 +31,11 @@ namespace CabInvoiceGenerator
             return this.numberOfRides == inputObject.numberOfRides && this.totalFare == inputObject.totalFare && this.averageFare == inputObject.averageFare;
         }
 
+        public override int GetHashCode()
+        {
+            return this.numberOfRides.GetHashCode() ^ this.totalFare.GetHashCode() ^ this.averageFare.GetHashCode();
+        }
 
-      
+
     }
 }

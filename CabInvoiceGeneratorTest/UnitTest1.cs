@@ -57,5 +57,29 @@ namespace CabInvoiceGeneratorTest
             //Asserting values
             Assert.AreEqual(expected, fare, time);
         }
+
+
+        // UC4 : Given Invalid RideType Should Throw Custom Exception
+
+        [Test]
+        public void GivenInvalidRideTypeShouldThrowCustomException()
+        {
+            //Creating Instance of InvoiceGenerator
+            invoiceGenerator = new InvoiceGenerator(RideType.NORMAL);
+            double distance = 2.0;
+            int time = 5;
+            string expected = "Invalid Ride Type";
+            try
+            {
+                //Calculating Fare
+                double fare = invoiceGenerator.CalculateFare(distance, time);
+            }
+            catch (CabInvoiceException exception)
+            {
+                //Asserting Values
+                Assert.AreEqual(expected, exception);
+            }
+        }
+
     }
 }
