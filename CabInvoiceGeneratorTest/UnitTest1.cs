@@ -81,5 +81,23 @@ namespace CabInvoiceGeneratorTest
             }
         }
 
+        // UC5 : Test case for checking total fare function for Premium Ride.
+
+        [Test]
+        public void GivenDistanceAndTimeShouldReturnTotalFareForPremiumRide()
+        {
+            // Creating Instance of InvoiceGenerator For Normal Ride
+            invoiceGenerator = new InvoiceGenerator(RideType.PREMIUM);
+            double distance = 2.0;
+            int time = 5;
+
+            // Calculating Fare
+            double fare = invoiceGenerator.CalculateFare(distance, time);
+            double expected = 40;
+
+            // Asserting Values
+            Assert.AreEqual(expected, fare);
+        }
+
     }
 }
